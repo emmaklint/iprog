@@ -3,45 +3,82 @@ var DinnerModel = function() {
  
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
+	var numberofguests= 2;
 
+	var menu={'starter': [],'main' : [], 'dessert':[]};
 
 	this.setNumberOfGuests = function(num) {
-		//TODO Lab 2
+		return=num;
 	}
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		//TODO Lab 2
-	}
+		num=this.setNumberOfGuests(2);
+		return num;
+		}
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-		//TODO Lab 2
+		if (menu.starter.type == type){
+			return menu.starter.name;
+		}
+		else if (menu.main.type == type){
+			return menu.main.name;
+		}
+
+		else if (menu.dessert.type==type){
+			return menu.dessert.name;
+		}
 	}
 
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
-		//TODO Lab 2
+		return menu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
-		//TODO Lab 2
+
+		var listOfIngredients =[];
+
+		for (x in menu.starter.ingredients){
+			listOfIngredients.push(menu.starter.ingredients[x]);
+		}
+		
+		for (x in menu.main.ingredients){
+			listOfIngredients.push(menu.main.ingredients[x]);
+		}
+
+		for (x in menu.dessert.ingredients){
+			listOfIngredients.push(menu.dessert.ingredients[x]);
+		}	
+
+		return listOfIngredients;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
-		//TODO Lab 2
+	this.getTotalMenuPrice = function(listOfIngredients) {
+		var cost=0;
+		 for (i in listOfIngredients) {
+		 	cost=cost+listOfIngredients[i].price;
+		 }
+
+		 var guests=this.getNumberOfGuests();
+		 return cost*guests;
 	}
+	
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		//TODO Lab 2 
+
+	
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
+		//removeValue
 		//TODO Lab 2
 	}
 
