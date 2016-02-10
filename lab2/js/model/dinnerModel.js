@@ -12,15 +12,9 @@ var DinnerModel = function() {
 
 	// should return 
 	this.getNumberOfGuests = function() {
-<<<<<<< HEAD
 		num = this.setNumberOfGuests(2);
 		return num;
 		}
-=======
-		number = this.setNumberOfGuests(2);
-		return number;
-	}
->>>>>>> 168176b6a51759e34c4c1639b313e5d09df83c8d
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
