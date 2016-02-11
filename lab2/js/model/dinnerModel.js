@@ -12,8 +12,8 @@ var DinnerModel = function() {
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		num = this.setNumberOfGuests(2);
-		return num;
+		number = this.setNumberOfGuests(2);
+		return number;
 		}
 
 	//Returns the dish that is on the menu for selected type 
@@ -55,7 +55,7 @@ var DinnerModel = function() {
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
+	this.getTotalMenuPrice = function(listOfIngredients) {
 		var cost=0;
 			for (i in listOfIngredients) {
 				cost = cost+listOfIngredients[i].price;
