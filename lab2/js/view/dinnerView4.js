@@ -1,40 +1,42 @@
 //ExampleView Object constructor
 var DinnerView4 = function (container, model) {
 
-	// Hämta antal gäster
-	num = model.getNumberOfGuests();
+	// Get number of guests
+	guests = model.getNumberOfGuests();
 
-	// Skicka in måltiden i dishInfo
-	var dish = model.getDish(100);
-	dishInfo(dish, model);
+	// Sends the dish into dishInfo-method 
+	// which gets all the relevant info about the object.
+	// --> The id-number should removed in lab 3 <--
+	dishInfo(model.getDish(100), model);
 
-	$("#totalNumberOfGuests").append('<b>Ingredients for ' + num + ' people</b>');
+	// Sends number of guests and dishprice to HTML
+	$("#totalNumberOfGuests").append('<b>Ingredients for ' + guests + ' people</b>');
 	$("#totalDishPrice").append('<b>Total: ' + model.getDishPrice(dish.id) + ' kr</b>');
 }
 
 var dishInfo = function(dish, model) {
-	// Skapa en div för hela rätten, lägg till titel, bild och beskrivning.
-	// Hämta ut alla ingredienser med kostnad och lägg i separat div.
-	// Hämta total kostnad
-
+	// Send the dishimage to HTML	
 	$("#dishImg").append('<img src="images/' + (dish.image) + '"/>');
-
+	
+	// Creates a div which contains the objects name and description
 	var dc = $("#dish");
 	var dishContainer = dc.append('<div class="dishSummary"></div>');
 	dishContainer.append('<h2>' + dish.name + '</h2>');
 	dishContainer.append(dish.description);
 
+	// Looks through every ingredient in an object
+	// and sends it to the ingredientList-method
 	for (var i in dish.ingredients) {
 		ingredientList(dish.ingredients[i]);
 	}
-
-	
 }
  
 var ingredientList = function(ingredient, model) {
-	var cost = ingredient.price * num;
-	var amount = ingredient.quantity * num;
+	// Get the ingredients cost and amount from methods in model
+	var cost = ingredient.price * guests;
+	var amount = ingredient.quantity * guests;
 
+	// Creates a div which contains the ingredients name, amount, unit and cost.
 	var ingredientContainer = $("#ingredients").append('<div class="ingredientsSummary"></div>');
 	ingredientContainer.append(amount + ' ' + ingredient.unit)
 	ingredientContainer.append(' ' + ingredient.name + ' ');
