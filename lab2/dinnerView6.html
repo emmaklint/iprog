@@ -14,7 +14,6 @@
       overflow-x:hidden; 
     }
 
-
     .container{
       height:100%;
       width:100%;
@@ -37,7 +36,7 @@
 
     .page-title{
       padding: 50px  9999px;
-      background: rgba(0, 0, 0, 0.6);
+      background: gray;
       margin: 0 -9999px;
       border-bottom: 2px solid;
     }
@@ -67,9 +66,9 @@
     padding:0px;
     }
 
-
-    
-
+    #dishOverview {
+      color:red;
+    }
 
     </style>
 
@@ -78,26 +77,19 @@
 
   </head>
   <body>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="page-title">
 		    <h1>DINNER PLANNER<small> From the best chefs in the world directly into your kitchen.</small></h1>
 		</div> 
 
 		<div class="row">
-		    <div id="left-column" class="col-md-2">
-		        <div class="left-content col-md-10">
-		            <h4>My Dinner</h4>
-
-		          	<div id="number-of-guests" class="col-md-8">
-		            <span id="numberOfGuests"></span> people
-		         	</div>
-		        </div>
-
-		    </div>
-    <div class="row">
-  		<div id="dishSummary" class="col-md-16">
-	   		<div id="dish"></div>
+		  <h4>My Dinner</h4> <span id="numberOfGuests"></span> <p>people</p>  
 		</div>
+    <div class="row">
+  	 <div id="dishSummary" class="col-md-6">
+      <div id="dishText" class="col-md-6"></div>
+    </div>
+	   
   </div>
 	
 

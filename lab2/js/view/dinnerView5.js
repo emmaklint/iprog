@@ -10,13 +10,13 @@ var DinnerView5 = function (container, model) {
 
 	var num = model.getNumberOfGuests();
 
-	$("#numberOfGuests").append(num);
+	$("#numberOfGuests").append('My dinner: ' + num + ' people');
 
 	for (var i in menu) {
 		dinnerCost(menu[i],model);
 		}
 
-	$("#totalCost").append(model.getTotalMenuPrice())
+	$("#totalCost").append('Total: ' + model.getTotalMenuPrice() + ' kr')
 }
  
 var dinnerCost = function(dish, model) {
