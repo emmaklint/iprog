@@ -8,9 +8,9 @@ $(function() {
 	// var dinnerView2 = new DinnerView2($(".container"),model);
 	//var dinnerView3 = new DinnerView3($("#dinnerView3"),model);
 
-	var dinnerView2 = new DinnerView2($("#left-column"),model);
-	var DinnerView3 = new DinnerView3($("#right-column"),model);
-	var summaryDescriptionView = new SummaryDescriptionView($("#summaryDescriptionView"), model);
+	// var dinnerView2 = new DinnerView2($("#left-column"),model);
+	// var DinnerView3 = new DinnerView3($("#right-column"),model);
+	var dishSummary = new DishSummary($("#dishSummary"), model);
 
 
 

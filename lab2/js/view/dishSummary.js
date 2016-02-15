@@ -1,5 +1,5 @@
 //ExampleView Object constructor
-var SummaryDescriptionView = function (container, model) {
+var DishSummary = function (container, model) {
 	
 	model.makeMenu();
 	model.addDishToMenu(1);
@@ -19,8 +19,8 @@ var SummaryDescriptionView = function (container, model) {
  
 var dinnerPrep = function(dish) {
 
-	var dishContainer = $("#summaryDescriptionView").append('<div class="dishOverview"></div>');
+	var dishContainer = $("#dishSummary").append('<div class="dishOverview"></div>');
 	dishContainer.append('<img src="images/' + (dish.image) + '"/>');
-	dishContainer.append(dish.name);
+	dishContainer.append('<h2>' + dish.name + '</h2>');
 	dishContainer.append(dish.description);
 }
