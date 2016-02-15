@@ -8,25 +8,128 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <style>
+    html, body{
+      height:100%;  
+      width: 100%;
+      margin:0;
+      overflow-x:hidden; 
+    }
 
+
+    .container{
+      height:100%;
+      width:100%;
+      margin:0px;
+      padding:0px;
+    }
+
+    .row{
+      height: 100%;
+    }
+
+    #left-column{
+      background-color:white;
+      border-left: 2px solid;
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+      height: 100%;
+      width: 25%;
+    }
+
+    .page-title{
+      padding: 50px  9999px;
+      background: rgba(0, 0, 0, 0.6);
+      margin: 0 -9999px;
+      border-bottom: 2px solid;
+    }
+
+    .page-title>h1{
+      color: black;
+    }
+
+    .page-title>h1>small{
+      color: white;
+      font-size: 16px;
+      font-style: italic;
+
+    }
+    .menu-table{
+      margin-top:100px;
+
+    }
+
+    .menu-table th{
+      color: black;
+      background-color: white;
+      border-color: black;
+    }
+
+   #number-of-guests{
+    padding:0px;
+    }
+
+
+    
+
+
+    </style>
   </head>
+
+
   <body>
   <div class="container">
-    <div class="maintitle">
-    <h1>Dinner planner</h1>
-    </div>
-      <div>
-        Number of guests: <span id="numberOfGuests"></span>
-      </div>
-      <div>
-        Dinner cost: <span id="dinnerCost"></span>
-        </div>
-      <div>
-          <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-        <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-      </div>
-    </div>
-  </div>
+      <div class="page-title">
+        <h1>DINNER PLANNER<small> From the best chefs in the world directly into your kitchen.</small></h1>
+      </div> 
+
+      <div class="row">
+        <div id="left-column" class="col-md-2">
+          <div class="left-content col-md-10">
+            <h4>My Dinner</h4>
+
+          <div id="number-of-guests" class="col-md-8">
+            People <span id="numberOfGuests"></span>
+          </div>
+
+          <div class="col-md-4">
+            <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
+            <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+          </div>
+          </div>
+
+       <table class="table menu-table">
+          <thead>
+            <tr>
+              <th>Dish Name</th>
+                <th>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>        
+                <td><span id="menu-dish"></span></td>  
+                <td><span id="menu-dish-cost"></span></td>
+                <td>
+              </tr>
+              <tr>
+                <td>  </td>
+                <td><span id="dinnerCost"></span> SEK</td>
+              </tr>
+            </tbody>
+        </table>
+
+    <div class="menu-content col-md-10">
+        <button type="button" class="btn btn-default" style="display: block; margin: 0 auto;">Confirm Dinner</button>
+        </div> 
+      </div> 
+
+    <div id="right-column" class="col-md-2"> 
+      <h2>Testar right column</h2>
+      <span id="allDishes"></span>
+      </div> 
+
+
+  
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -37,6 +140,7 @@
   <script src="js/app.js"></script>
   <script src="js/model/dinnerModel.js"></script>
   <script src="js/view/dinnerView2.js"></script>
+  <script src="js/view/dinnerView3.js"></script>
   <script src="js/view/exampleViewController.js"></script>
   </body>
 </html>

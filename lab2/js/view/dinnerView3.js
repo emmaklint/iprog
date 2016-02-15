@@ -10,11 +10,13 @@ var DinnerView2 = function (container,model) {
 
 	this.price = container.find("#dinnerCost");
 
+	this.getAllDishes = container.find("#allDishes");
 
 	//this.price.html(model.getTotalMenuPrice(listOfIngredients));
 
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	this.price.html(model.getTotalMenuPrice());
+	this.getAllDishes.html(model.getAllDishes("dessert"));
 
 
 }
