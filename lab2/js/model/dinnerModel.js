@@ -56,8 +56,19 @@ var DinnerModel = function() {
 		return listOfIngredients;
 	}
 
+	this.getDishPrice = function(id) {
+		var cost=0;
+		var dish = this.getDish(id);
+		for (i in dish.ingredients) {
+			cost = cost+dish.ingredients[i].price;
+		}
+		var guests=this.getNumberOfGuests();
+		return cost*guests;
+	}
+
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function(listOfIngredients) {
+	this.getTotalMenuPrice = function() {
+		var listOfIngredients = this.getAllIngredients();
 		var cost=0;
 			for (i in listOfIngredients) {
 				cost = cost+listOfIngredients[i].price;
