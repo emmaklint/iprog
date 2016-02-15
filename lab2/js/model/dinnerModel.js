@@ -4,7 +4,9 @@ var DinnerModel = function() {
 	//TODO Lab 2 implement the data structure that will hold number of guest
 	// and selected dinner options for dinner menu
 
-	this.menu = [];
+	this.makeMenu = function() {
+		this.menu = [];
+	}
 
 	this.setNumberOfGuests = function(num) {
 		return num;

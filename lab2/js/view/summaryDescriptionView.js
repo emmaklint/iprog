@@ -1,13 +1,26 @@
 //ExampleView Object constructor
-var summaryDescriptionView = function (container, model) {
+var SummaryDescriptionView = function (container, model) {
 	
-	// Get all the relevant elements of the view (ones that show data
-  	// and/or ones that responed to interaction)
-	this.numberOfGuests = container.find("#numberOfGuests");
-	this.plusButton = container.find("#plusGuest");
-	this.minusButton = container.find("#minusGuest");
-	
-	this.numberOfGuests.html("Hello World");
-	
+	model.makeMenu();
+	model.addDishToMenu(1);
+	model.addDishToMenu(100);
+	model.addDishToMenu(201);
+
+	var menu = model.getFullMenu();
+
+	var num = model.getNumberOfGuests();
+
+	$("#numberOfGuests").append(num);
+
+	for (var i in menu) {
+		dinnerPrep(menu[i]);
+		}
 }
  
+var dinnerPrep = function(dish) {
+
+	var dishContainer = $("#summaryDescriptionView").append('<div class="dishOverview"></div>');
+	dishContainer.append('<img src="images/' + (dish.image) + '"/>');
+	dishContainer.append(dish.name);
+	dishContainer.append(dish.description);
+}
