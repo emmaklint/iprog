@@ -1,5 +1,5 @@
 //ExampleView Object constructor
-var CostSummary = function (container, model) {
+var DinnerView5 = function (container, model) {
 	
 	model.makeMenu();
 	model.addDishToMenu(1);
