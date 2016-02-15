@@ -5,72 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dinner planner</title>
-
-        <style>
-    html, body{
-      height:100%;  
-      width: 100%;
-      margin:0;
-      overflow-x:hidden; 
-    }
-
-    .container{
-      height:100%;
-      width:100%;
-      margin:0px;
-      padding:0px;
-    }
-
-    .row{
-      height: 100%;
-    }
-
-    #left-column{
-      background-color:white;
-      border-left: 2px solid;
-      border-right: 2px solid;
-      border-bottom: 2px solid;
-      height: 100%;
-      width: 25%;
-    }
-
-    .page-title{
-      padding: 50px  9999px;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 0 -9999px;
-      border-bottom: 2px solid;
-    }
-
-    .page-title>h1{
-      color: black;
-    }
-
-    .page-title>h1>small{
-      color: white;
-      font-size: 16px;
-      font-style: italic;
-
-    }
-    .menu-table{
-      margin-top:100px;
-
-    }
-
-    .menu-table th{
-      color: black;
-      background-color: white;
-      border-color: black;
-    }
-
-   #number-of-guests{
-    padding:0px;
-    }
-
-
-    </style>
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css"/>
 
   </head>
   <body>
@@ -79,19 +16,14 @@
 		    <h1>DINNER PLANNER<small> From the best chefs in the world directly into your kitchen.</small></h1>
 		</div> 
 
-		<div>
-      <span id="numberOfGuests"></span>
+		<div class="myDinnerList">
+            <span id="numberOfGuests"></span>
+        </div>
+        <div id="costSummary">
+         <!--    <div id="costSummary"></div> -->
+        </div>
+        <span id="totalCost"></span>
     </div>
-    <div>
-  		<div id="costSummary" class="col-md-16">
-	   		<div id="dish"></div>
-	 	 </div>
-
-      <span id="totalCost"></span>
-  </div>
-
-
-	
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>

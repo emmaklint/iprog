@@ -20,7 +20,7 @@ var DinnerView5 = function (container, model) {
 		}
 
 	// Gets the menus total cost and send to HTML
-	$("#totalCost").append('Total: ' + model.getTotalMenuPrice() + ' kr')
+	$("#totalCost").append('<p>Total: ' + model.getTotalMenuPrice() + ' kr</p>')
 }
  
 var dinnerCost = function(dish, model) {
@@ -29,8 +29,9 @@ var dinnerCost = function(dish, model) {
 	var cost = model.getDishPrice(dish.id);
 
 	// Creates a div which contains the objects name, image and total cost
-	var dishContainer = $("#costSummary").append('<div class="dishOverview"></div>');
-	dishContainer.append('<img src="images/' + (dish.image) + '"/>');
-	dishContainer.append('<h2>' + dish.name + '</h2>');
-	dishContainer.append(cost + " kr");
+	var dishImg = ('<img src="images/' + (dish.image) + '"/>');
+	var dishName = ('<h2>' + dish.name + '</h2>');
+	var dishCost = ('<p class="cost">' + cost + " kr</p>");
+
+	$("#costSummary").append('<div class="dish col-md-4">' + dishImg + '<div id="dishText">' + dishName + dishCost + '</div></div>');
 }

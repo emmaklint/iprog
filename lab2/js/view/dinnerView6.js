@@ -10,8 +10,8 @@ var DinnerView6 = function (container, model) {
 	var menu = model.getFullMenu();
 
 	// Get number of guests and send to HTML
-	var num = model.getNumberOfGuests();
-	$("#numberOfGuests").append(num);
+	var guest = model.getNumberOfGuests();
+	$("#numberOfGuests").append('My dinner: ' + guest + ' people');
 
 
 	// Send every dinner-object into dinnerPrep-method 
@@ -23,8 +23,9 @@ var DinnerView6 = function (container, model) {
  
 var dinnerPrep = function(dish) {
 	// Creates a div which contains the objects name, image and description
-	var dishContainer = $("#dishSummary").append('<div class="dishOverview"></div>');
-	dishContainer.append('<img src="images/' + (dish.image) + '"/>');
-	dishContainer.append('<h2>' + dish.name + '</h2>');
-	dishContainer.append(dish.description);
+	var dishImg = ('<div class="col-md-4 dishImage"><img src="images/' + (dish.image) + '"/></div>');
+	var dishName = ('<h2>' + dish.name + '</h2>');
+	var dishDesc = ('<p class="description">' + dish.description + '</p>');
+
+	$("#dishSummary").append('<div class="dish">' + dishImg + '<div class="col-md-8">' + dishName + dishDesc + '</div></div>');
 }

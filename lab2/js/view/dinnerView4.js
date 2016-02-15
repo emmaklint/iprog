@@ -7,39 +7,38 @@ var DinnerView4 = function (container, model) {
 	// Sends the dish into dishInfo-method 
 	// which gets all the relevant info about the object.
 	// --> The id-number should removed in lab 3 <--
-	dishInfo(model.getDish(100), model);
+	var dish = model.getDish(100);
+	dishInfo(dish, model);
 
 	// Sends number of guests and dishprice to HTML
-	$("#totalNumberOfGuests").append('<b>Ingredients for ' + guests + ' people</b>');
-	$("#totalDishPrice").append('<b>Total: ' + model.getDishPrice(dish.id) + ' kr</b>');
+	$("#totalNumberOfGuests").append('<h2>Ingredients for ' + guests + ' people</h2>');
+	$("#totalDishPrice").append('<h2>Total: ' + model.getDishPrice(dish.id) + ' kr</h2>');
 }
 
 var dishInfo = function(dish, model) {
-	// Send the dishimage to HTML	
-	$("#dishImg").append('<img src="images/' + (dish.image) + '"/>');
-	
 	// Creates a div which contains the objects name and description
-	var dc = $("#dish");
-	var dishContainer = dc.append('<div class="dishSummary"></div>');
-	dishContainer.append('<h2>' + dish.name + '</h2>');
-	dishContainer.append(dish.description);
+	var dishImg = ('<div id="image" class="col-md-8"><img src="images/' + (dish.image) + '"/></div>');
+	var dishText = ('<h2>' + dish.name + '</h2><p>' + dish.description + '</p>');
+	$("#dish").append(dishImg + '<div id="dishText" class="col-md-8">' + dishText + '</div>')
 
 	// Looks through every ingredient in an object
 	// and sends it to the ingredientList-method
 	for (var i in dish.ingredients) {
-		ingredientList(dish.ingredients[i]);
+		ingredientInfo(dish.ingredients[i]);
 	}
 }
  
-var ingredientList = function(ingredient, model) {
+var ingredientInfo = function(ingredient, model) {
 	// Get the ingredients cost and amount from methods in model
 	var cost = ingredient.price * guests;
 	var amount = ingredient.quantity * guests;
 
-	// Creates a div which contains the ingredients name, amount, unit and cost.
-	var ingredientContainer = $("#ingredients").append('<div class="ingredientsSummary"></div>');
-	ingredientContainer.append(amount + ' ' + ingredient.unit)
-	ingredientContainer.append(' ' + ingredient.name + ' ');
-	ingredientContainer.append(cost + ' kr');
+	//Creates a table which contains the ingredients name, amount, unit and cost.
+    var ingrAmount = ('<td width="30%">' + amount + ' ' + ingredient.unit + '</td>')
+    var ingrName = ('<td width="60%">' + ingredient.name + '</td>');
+    var ingrCost = ('<td width="5%">' + cost + 'kr' + '</td>');
+
+    $("#ingredients").append('<tr>' + ingrAmount + ingrName + ingrCost + '</tr>')
+
 
 }

@@ -59,7 +59,7 @@ var DinnerModel = function() {
 	this.getDishPrice = function(id) {
 		var cost=0;
 		var dish = this.getDish(id);
-		for (i in dish.ingredients) {
+		for (var i in dish.ingredients) {
 			cost = cost+dish.ingredients[i].price;
 		}
 		var guests=this.getNumberOfGuests();
