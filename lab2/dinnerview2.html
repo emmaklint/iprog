@@ -54,12 +54,12 @@
       font-style: italic;
 
     }
-    .menu-table{
+    .left-table{
       margin-top:100px;
 
     }
 
-    .menu-table th{
+    .left-table th{
       color: black;
       background-color: white;
       border-color: black;
@@ -69,9 +69,37 @@
     padding:0px;
     }
 
+    #right-column{
+     width: 75%;
+     height: 100%;
 
-    
 
+    }
+
+    .line-separator{
+      height: 1px;
+      width:1000px;
+      display:block; 
+      margin: 9px 0;
+      overflow: hidden;
+      background-color: black;
+    }
+
+
+    .dropdown{
+      padding-left: 30%;
+      margin-top: 4.6%;
+    }
+
+    .dropdown-menu{
+      margin-left: 33%;
+    }
+
+    .dishes{
+      margin-top: 20px;
+      max-width:10px;
+      word-wrap:break-word;
+    }
 
     </style>
   </head>
@@ -92,13 +120,13 @@
             People <span id="numberOfGuests"></span>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-2">
             <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
             <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
           </div>
           </div>
 
-       <table class="table menu-table">
+       <table class="table left-table">
           <thead>
             <tr>
               <th>Dish Name</th>
@@ -106,9 +134,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>        
-                <td><span id="menu-dish"></span></td>  
-                <td><span id="menu-dish-cost"></span></td>
+             <tr>        
+                <td><span id="dish-name"></span></td>  
+                <td><span id="dish-cost"></span></td>
                 <td>
               </tr>
               <tr>
@@ -118,17 +146,33 @@
             </tbody>
         </table>
 
-    <div class="menu-content col-md-10">
-        <button type="button" class="btn btn-default" style="display: block; margin: 0 auto;">Confirm Dinner</button>
-        </div> 
+      <button type="button" class="btn btn-default" style="display: block; margin: 0 auto;">Confirm Dinner</button>
       </div> 
 
     <div id="right-column" class="col-md-2"> 
-      <h2>Testar right column</h2>
-      <span id="allDishes"></span>
+      <div id="search-bar" class="col-md-4">
+        <h4>Select Dish</h4>
+        <div class="line-separator"></div>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for dish">
+          <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Search</button></span>
+        </div> 
       </div> 
 
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Dish Type
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="">Starter</a></li>
+        <li><a href="">Main</a></li>
+        <li><a href="">Desert</a></li>
+      </ul>
+    </div>
 
+    <div class="right-content col-md-10">
+    
+    </div>
   
 
     <!-- jQuery -->

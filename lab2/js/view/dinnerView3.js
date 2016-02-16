@@ -1,22 +1,24 @@
-var DinnerView2 = function (container,model) {
+var DinnerView3 = function (container,model) {
 
-	this.numberOfGuests = container.find("#numberOfGuests");
-	this.price = container.find("#dinnerCost");
+	// Hämta antal gäster
+	num = model.getNumberOfGuests();
 
-	//this.menuDish = container.find("#menu-dish");
-	//this.menuDishCost = container.find("#menu-dish-cost");
-	this.plusButton = container.find("#plusGuest");
-	this.minusButton = container.find("#minusGuest");
+	// Skicka in måltiden i dishInfo
+	var dish = model.getDish(100);
+	dishInfo(dish, model);
+}
 
-	this.price = container.find("#dinnerCost");
+var dishInfo = function(dish, model) {
+	// Skapa en div för hela rätten, lägg till titel, bild och beskrivning.
+	// Hämta ut alla ingredienser med kostnad och lägg i separat div.
+	// Hämta total kostnad
 
-	this.getAllDishes = container.find("#allDishes");
 
-	//this.price.html(model.getTotalMenuPrice(listOfIngredients));
 
-	this.numberOfGuests.html(model.getNumberOfGuests());
-	this.price.html(model.getTotalMenuPrice());
-	this.getAllDishes.html(model.getAllDishes("dessert"));
-
+//NOTE TO SELF: GÖR SÅ ATT ALLA HÄMTAS UT!
+	var dishContainer = $(".right-content").append('<div class="dishes"></div>');
+	dishContainer.append('<img src="images/' + (dish.image) + '"/>');
+	dishContainer.append('<h4>' + dish.name + '</h4>');
+	dishContainer.append("<p>" + dish.description.slice(0,85) + "..."+"</p>");
 
 }
