@@ -27,5 +27,8 @@ var dinnerPrep = function(dish) {
 	var dishName = ('<h2>' + dish.name + '</h2>');
 	var dishDesc = ('<p class="description">' + dish.description + '</p>');
 
+	// Using .append instead of .html because .html only contains the last info
+	// you put in. Therefor, in this case .html would only show the last dish
+	// since it can't create several items who looks the same.
 	$("#dishSummary").append('<div class="dish">' + dishImg + '<div class="col-md-8">' + dishName + dishDesc + '</div></div>');
 }
