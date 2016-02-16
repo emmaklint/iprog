@@ -22,6 +22,7 @@ img {
   width:100%;
   margin:0px;
   padding:0px;
+
 }
 
 .row{
@@ -110,5 +111,35 @@ h2 {
 
 .dishImage {
   margin-top: 10px;
-  
 }
+
+.printButton {
+  background-color:#FED766;
+  font-family: Titillium Web;
+  font-size: 30px;
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.backButton {
+  height: 40px;
+  padding: 0;
+  text-align: right;
+  font-size: 80%;
+  vertical-align:center; 
+}
+
+.button {
+  text-align: center;
+}
+
+button {
+  background-color:#FED766;
+  font-family: Titillium Web;
+  font-size: 20px;
+  border: solid 3px;
+  box-shadow: 3px 3px  black;
+  padding: 8px;
+}
+

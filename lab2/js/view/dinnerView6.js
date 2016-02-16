@@ -10,8 +10,9 @@ var DinnerView6 = function (container, model) {
 	var menu = model.getFullMenu();
 
 	// Get number of guests and send to HTML
-	var guest = model.getNumberOfGuests();
-	$("#numberOfGuests").append('My dinner: ' + guest + ' people');
+	var num = model.getNumberOfGuests();
+	$("#numberOfGuests").html('My dinner: ' + num + ' people');
+	$(".backButton").html('<button type="button" class="backButton">Go back and edit dinner</button>')
 
 
 	// Send every dinner-object into dinnerPrep-method 

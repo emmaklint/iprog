@@ -11,7 +11,8 @@ var DinnerView5 = function (container, model) {
 
 	// Get number of guests and send to HTML
 	var num = model.getNumberOfGuests();
-	$("#numberOfGuests").append('My dinner: ' + num + ' people');
+	$("#numberOfGuests").html('My dinner: ' + num + ' people');
+	$(".backButton").html('<button type="button" class="backButton">Go back and edit dinner</button>')
 
 	// Send every dinner-object into dinnerCost-method 
 	// which gets all the relevant info about the objects.

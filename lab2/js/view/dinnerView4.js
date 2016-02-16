@@ -17,9 +17,9 @@ var DinnerView4 = function (container, model) {
 
 var dishInfo = function(dish, model) {
 	// Creates a div which contains the objects name and description
-	var dishImg = ('<div id="image" class="col-md-8"><img src="images/' + (dish.image) + '"/></div>');
+	var dishImg = ('<div id="image"><img src="images/' + (dish.image) + '"/></div>');
 	var dishText = ('<h2>' + dish.name + '</h2><p>' + dish.description + '</p>');
-	$("#dish").append(dishImg + '<div id="dishText" class="col-md-8">' + dishText + '</div>')
+	$("#dish").prepend(dishImg + '<div id="dishText">' + dishText + '</div>')
 
 	// Looks through every ingredient in an object
 	// and sends it to the ingredientList-method
