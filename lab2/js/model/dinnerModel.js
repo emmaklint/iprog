@@ -32,8 +32,6 @@ var DinnerModel = function() {
 	// 	}
 		return this.getDish(this.menu["type"]);
 
-
-
 		 }
 
 	//Returns all the dishes on the menu.
@@ -68,10 +66,14 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function() {
+		//console.log("Kommer in i funktionen");
 		var listOfIngredients = this.getAllIngredients();
+		//console.log("Kommer in i funktionen 2");
 		var cost=0;
+		//console.log("Kommer in i funktionen 3");
 			for (i in listOfIngredients) {
 				cost = cost+listOfIngredients[i].price;
+				//console.log("Kommer in i funktionen4");
 			}
 
 		var guests=this.getNumberOfGuests();
@@ -106,6 +108,7 @@ var DinnerModel = function() {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type,filter) {
+		//console.log("testar getAllDishes");
 	  return $(dishes).filter(function(index,dish) {
 		var found = true;
 		if(filter){
@@ -126,12 +129,14 @@ var DinnerModel = function() {
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
+	//console.log("testar getDish");
 	  for(key in dishes){
 			if(dishes[key].id == id) {
 				return dishes[key];
 			}
 		}
 	}
+
 
 
 	// the dishes variable contains an array of all the 
