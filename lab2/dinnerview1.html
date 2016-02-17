@@ -20,21 +20,28 @@
     }
 
     .container{
+      color: black;
     }
-
-    .title{
+    .page-title{
       padding: 50px  9999px;
       background: rgba(0, 0, 0, 0.6);
       margin: 0 -9999px;
+      border-bottom: 2px solid;
     }
 
-    .title>h1{
+    .page-title>h1{
       color: black;
     }
 
-    .title>h1>small{
+    .page-title>h1>small{
       color: white;
+      font-size: 16px;
+      font-style: italic;
 
+    }
+
+    .info{
+      color: white;
     }
 
 
@@ -44,13 +51,17 @@
 
   <body>
     <div class="container">
-      <div class="title">
+      <div class="page-title">
       <h1>DINNER PLANNER<small> From the best chefs in the world directly into your kitchen.</small></h1>
       </div> 
      
      <div class= "info">
      <h2>A home dinner service!</h2>
-     </div>  
+
+     <button type="button" class="btn btn-default">Create Dinner</button>
+     </div>
+
+
     </div>  
   </body>
 </html>
