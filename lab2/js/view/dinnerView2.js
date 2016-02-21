@@ -1,40 +1,22 @@
 var DinnerView2 = function (container,model) {
 
-	this.numberOfGuests = container.find("#numberOfGuests");
+	$("#number").append('<input type="number" min="1" value="' + model.getNumberOfGuests() + '"></input>')
 
-	//this.menuDish = container.find("#menu-dish");
-	//this.menuDishCost = container.find("#menu-dish-cost");
-	this.plusButton = container.find("#plusGuest");
-	this.minusButton = container.find("#minusGuest");
-
-	this.price = container.find("#dinnerCost");
-	this.DishCost = container.find("#dish-cost");
-	this.DishName=container.find("#dish-name");
-
-
-	model.makeMenu();
-	model.addDishToMenu(1);
-	model.addDishToMenu(100);
-	//model.addDishToMenu(201);
+	$("#table").append('<tr><th>Dishname</th><th>Cost</th></tr>');
+	$("#totalPrice").append('<p>Total: ' + model.getTotalMenuPrice() + ' kr</p>');
 
 	var menu = model.getFullMenu();
-	var dishprice=model.getDishPrice(1);
-	var dishprice2=model.getDishPrice(100);
 
-	this.DishName.append("<div>"+menu[0].name+"</div>");
-	this.DishName.append("<div>"+menu[1].name+"</div>");
+for (var i = 0; i < menu.length; i++) {
+	costInfo(menu[i],model);
+	}
+}
 
+var costInfo = function(dish, model) {
+	var cost = model.getDishPrice(dish.id);
 
-	this.DishCost.append("<div>"+dishprice+" SEK"+"</div>");
-	this.DishCost.append("<div>"+dishprice2+" SEK"+"</div>");
+	var dishName = ('<td width="30%">' + dish.name + '</td>')
+	var dishCost = ('<td width="30%">' + cost + ' kr' + '</td>')
 
-
-	//this.DishCost.append("<div>"+"0 SEK"+"</div>");
-	//this.DishName.append("<div>"+"pending"+"</div>");
-	
-
-	this.numberOfGuests.html(model.getNumberOfGuests());
-	this.price.append("Total cost"+ model.getTotalMenuPrice());
-
-
+	$("#table").append('<tr>' + dishName + dishCost + '</tr>')
 }

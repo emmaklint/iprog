@@ -16,19 +16,34 @@
 		<div class="page-title">
 		    <h1>DINNER PLANNER<small> From the best chefs in the world directly into your kitchen.</small></h1>
 		</div>
-        <div>
-            <div id="dish" class="col-md-4">
-            <button type="button">back to Select Dish</button>
-            </div>
-            <div id="ingredientList" class="col-md-4">
-                <span id="totalNumberOfGuests"></span>
-                <div id="ingredients"></div>
-                <span id="totalDishPrice"></span>
-                <button type="button">Confirm dish</button>
-            </div>
-        
-        </div>
+        <div class="row">
+            <div id="left-column" class="col-md-2">
+                <div class="left-content col-md-10">
+                    <h4>My Dinner</h4>
+                    <div class="col-md-12">
+                        <div class="col-md-4">People</div>
+                        <div id="number" class="col-md-6"></div>
+                    </div>
 
+                        <table id="table" width="70%"></table>
+                        <span id="totalPrice"></span>
+
+                        <button type="button" class="btn btn-default" style="display: block; margin: 0 auto;">Confirm Dinner</button>
+                </div>
+            </div>
+
+            <div id="right-content col-md-10">
+                <div id="dish" class="col-md-4">
+                    <button type="button">back to Select Dish</button>
+                </div>
+                    <div id="ingredientList" class="col-md-4">
+                        <span id="totalNumberOfGuests"></span>
+                        <div id="ingredients"></div>
+                        <span id="totalDishPrice"></span>
+                        <button type="button">Confirm dish</button>
+                    </div>
+            </div>
+        </div>
     </div>
 
 
@@ -42,8 +57,8 @@
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
+    <script src="js/view/dinnerView2.js"></script>
 	<script src="js/view/dinnerView4.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
+<!--<script src="js/view/exampleViewController.js"></script> -->
   </body>
 </html>

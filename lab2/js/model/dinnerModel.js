@@ -9,27 +9,16 @@ var DinnerModel = function() {
 	}
 
 	this.setNumberOfGuests = function(num) {
-		return num;
+		this.guests = num;
 	}
 
 	// should return 
 	this.getNumberOfGuests = function() {
-		number = this.setNumberOfGuests(2);
-		return number;
+		return this.guests;
 		}
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
-	// 	if (menu.starter.type == type){
-	// 		return menu.starter.name;
-	// 	}
-	// 	else if (menu.main.type == type){
-	// 		return menu.main.name;
-	// 	}
-
-	// 	else if (menu.dessert.type==type){
-	// 		return menu.dessert.name;
-	// 	}
 		return this.getDish(this.menu["type"]);
 
 		 }

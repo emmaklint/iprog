@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -115,64 +115,41 @@
         <div id="left-column" class="col-md-2">
           <div class="left-content col-md-10">
             <h4>My Dinner</h4>
+            <div class="col-md-12">
+              <div class="col-md-4">People</div> 
+              <div id="number" class="col-md-6"></div>
+            </div>
 
-          <div id="number-of-guests" class="col-md-8">
-            People <span id="numberOfGuests"></span>
+            <table id="table" width="70%"></table>
+            <span id="totalPrice"></span>
+
+            <button type="button" class="btn btn-default" style="display: block; margin: 0 auto;">Confirm Dinner</button>
+           </div>
           </div>
-
-          <div class="col-md-2">
-            <button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-            <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
-          </div>
-          </div>
-
-       <table class="table left-table">
-          <thead>
-            <tr>
-              <th>Dish Name</th>
-                <th>Cost</th>
-              </tr>
-            </thead>
-            <tbody>
-             <tr>        
-                <td><span id="dish-name"></span></td>  
-                <td><span id="dish-cost"></span></td>
-                <td>
-              </tr>
-              <tr>
-                <td>  </td>
-                <td><span id="dinnerCost"></span> SEK</td>
-              </tr>
-            </tbody>
-        </table>
-
-      <button type="button" class="btn btn-default" style="display: block; margin: 0 auto;">Confirm Dinner</button>
-      </div> 
-
-    <div id="right-column" class="col-md-2"> 
-      <div id="search-bar" class="col-md-4">
-        <h4>Select Dish</h4>
-        <div class="line-separator"></div>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for dish">
-          <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Search</button></span>
+        <div id="right-column" class="col-md-2"> 
+          <div id="search-bar" class="col-md-4">
+          <h4>Select Dish</h4>
+          <div class="line-separator"></div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for dish">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Search</button>
+            </span>
+          </div> 
         </div> 
-      </div> 
 
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Dish Type
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="">Starter</a></li>
-        <li><a href="">Main</a></li>
-        <li><a href="">Desert</a></li>
-      </ul>
-    </div>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Dish Type
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a onclick="newType('starter')">Starter</p></li>
+            <li><a onclick="newType('main dish')">Main</a></li>
+            <li><a onclick="newType('dessert')">Dessert</a></li>
+          </ul>
+        </div>
 
-    <div class="right-content col-md-10">
-    
-    </div>
+    <div class="right-content col-md-10"></div>
   
 
     <!-- jQuery -->
@@ -185,6 +162,6 @@
   <script src="js/model/dinnerModel.js"></script>
   <script src="js/view/dinnerView2.js"></script>
   <script src="js/view/dinnerView3.js"></script>
-  <script src="js/view/exampleViewController.js"></script>
+  <!-- <script src="js/view/exampleViewController.js"></script> -->
   </body>
 </html>

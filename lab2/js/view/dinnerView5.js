@@ -1,11 +1,5 @@
 //ExampleView Object constructor
 var DinnerView5 = function (container, model) {
-	
-	// Setting up a menu --> Remove in lab3 <--
-	model.makeMenu();
-	model.addDishToMenu(1);
-	model.addDishToMenu(100);
-	model.addDishToMenu(201);
 
 	var menu = model.getFullMenu();
 
